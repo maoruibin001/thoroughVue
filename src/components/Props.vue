@@ -1,7 +1,7 @@
 <template>
   <div>
     <input type="text" v-model="msgP">
-    <child v-bind='parentMsg'></child>
+    <child v-bind='parentMsg' data-3d-date-picker="true"></child>
   </div>
 </template>
 

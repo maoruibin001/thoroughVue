@@ -2,6 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
+import Error from './Error'
 import router from './router'
 import './directives/focus'
 import './golbalComponents/mycmps'
@@ -19,6 +20,23 @@ Vue.config.errorHandler = function (err, vm, info) {
 new Vue({
   el: '#app',
   router,
-  components: { App },
-  template: '<App/>'
+  delimiters: ['<%', '%>'],
+  components: {
+    App ,
+    Error
+  },
+  // render: createElement =>  createElement(App)
+  template: '<Error><App/></Error>'
 })
+// new Vue({
+//   render: function (createElement) {
+//     var myParagraphVNode = createElement('p', 'hi')
+//     return createElement('div', [
+//       // 错误-重复的 VNodes
+//       myParagraphVNode, myParagraphVNode,createElement('p', {style: {color: 'red'}}, 'hello world')
+//     ])
+//   },
+//   renderError (h, err) {
+//     return h('pre', { style: { color: 'red' }}, err.stack)
+//   }
+// }).$mount('#app')

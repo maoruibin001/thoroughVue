@@ -4,7 +4,7 @@
 import Vue from 'vue'
 
 Vue.directive('focus', (el) => {
-  console.log(el)
-  // el.focus()
-  // el.style.color = 'red'
+  // console.log(el)
+  el.focus()
+  el.style.color = 'red'
 })
