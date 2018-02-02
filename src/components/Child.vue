@@ -7,6 +7,10 @@
 
 <script>
   export default {
-    props: ['age', 'name']
+    props: ['age', 'name'],
+    mounted() {
+      console.log(this.$parent);
+      console.log(this.$root)
+    }
   }
 </script>

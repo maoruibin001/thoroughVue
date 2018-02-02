@@ -3,7 +3,9 @@
     <h1 v-focus><% msg %></h1>
     <Cmps></Cmps>
     <Cust-input v-model="hello"></Cust-input>
+    <h1>begin</h1>
     <!--<input type="text" v-focus v-model="hello">-->
+    <h1  @hello="hello2">end</h1>
     <my-cmps></my-cmps>
   </div>
 </template>
@@ -13,6 +15,7 @@ import Cmps from './Cmps.vue'
 import CustInput from './CustInput.vue'
 import Vue from 'vue'
 export default {
+  comments: true,
   model: {
     prop: 'checked',
     event: 'change'
@@ -29,8 +32,15 @@ export default {
       hello: '2432434'
     }
   },
+  methods: {
+    hello2() {
+      console.log('hello, you emit me');
+    }
+  },
   mounted () {
     let focus = Vue.directive('focus')
+    this.$on('hello', () => {
+    })
   }
 }
 

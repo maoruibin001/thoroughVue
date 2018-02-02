@@ -13,11 +13,11 @@ Vue.config.productionTip = false
 /* eslint-disable no-new */
 
 Vue.config.errorHandler = function (err, vm, info) {
-  debugger
   console.log(err, vm, info)
 }
 
-new Vue({
+const vm = new Vue({
+  comments: true,
   el: '#app',
   router,
   delimiters: ['<%', '%>'],
@@ -40,3 +40,5 @@ new Vue({
 //     return h('pre', { style: { color: 'red' }}, err.stack)
 //   }
 // }).$mount('#app')
+
+

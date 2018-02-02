@@ -11,11 +11,11 @@
     data() {
       return {
         errorMsg: '',
-        show: false
+        show: false,
+        html2: '<span>hello world</span>'
       }
     },
     errorCaptured(err, vm, info) {
-      debugger;
       if (err) {
         this.show = true;
         this.errorMsg = info;
