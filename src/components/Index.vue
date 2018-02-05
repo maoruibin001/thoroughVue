@@ -1,12 +1,15 @@
 <template>
   <div>
     <h1>hello world</h1>
-    <component :is="currentView"></component>
-    <button @click="ok=!ok">toggle</button>
 
-    <transition name="fade2">
-      <div v-if="ok">toggled content</div>
-    </transition>
+    <button @click="toggleView">toggle</button>
+
+
+      <transition name="fade2">
+        <keep-alive>
+          <component :is="currentView"></component>
+        </keep-alive>
+      </transition>
   </div>
 </template>
 
